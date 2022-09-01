@@ -30,8 +30,7 @@ void setup() {
     pinMode(buzzer_pin, OUTPUT);
     Serial.begin(9600);
 
-  lcd.init();                      // initialize the lcd 
-  // Print a message to the LCD.
+  lcd.init();              
   lcd.backlight();
   lcd.setCursor(1,0);
   lcd.print("Morse Keyer");
@@ -82,7 +81,7 @@ void TransmitMorse()
       if (transmitNext != 0) {
         switch (transmitNext){
           case dit:
-            analogWrite(buzzer_pin, 30);
+            analogWrite(buzzer_pin, 50);
             transmittingDit = true;
             transmittionStartedAt = millis();
             break;
